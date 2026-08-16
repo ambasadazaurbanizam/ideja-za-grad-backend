@@ -2,8 +2,8 @@ package db
 
 import (
 	"fmt"
-	"github.com/yaroslav-asu/urban-map/internal/utils/env"
-	"github.com/yaroslav-asu/urban-map/models/gorm/marker"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/internal/utils/env"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/models/gorm/marker"
 	"go.uber.org/zap"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

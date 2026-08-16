@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"github.com/yaroslav-asu/urban-map/internal/utils/env"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/internal/utils/env"
 	"go.uber.org/zap"
 	"log"
 )

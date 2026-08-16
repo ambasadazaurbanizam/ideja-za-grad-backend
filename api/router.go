@@ -3,7 +3,7 @@ package api
 import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	v1 "github.com/yaroslav-asu/urban-map/api/v1"
+	v1 "github.com/ambasadazaurbanizam/ideja-za-grad-backend/api/v1"
 	"log"
 	"sync"
 )

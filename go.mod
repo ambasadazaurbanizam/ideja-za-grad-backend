@@ -1,4 +1,4 @@
-module github.com/yaroslav-asu/urban-map
+module github.com/ambasadazaurbanizam/ideja-za-grad-backend
 
 go 1.21
 

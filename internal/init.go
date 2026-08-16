@@ -1,9 +1,9 @@
 package internal
 
 import (
-	"github.com/yaroslav-asu/urban-map/internal/logger"
-	"github.com/yaroslav-asu/urban-map/internal/utils/db"
-	"github.com/yaroslav-asu/urban-map/internal/utils/env"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/internal/logger"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/internal/utils/db"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/internal/utils/env"
 )
 
 func Init() {

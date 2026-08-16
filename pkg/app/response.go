@@ -2,7 +2,7 @@ package app
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/yaroslav-asu/urban-map/pkg/e"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/pkg/e"
 )
 
 type Gin struct {
