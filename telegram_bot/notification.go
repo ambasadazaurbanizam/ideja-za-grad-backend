@@ -29,6 +29,7 @@ func (m *MarkerNotification) Marker() marker.Marker {
 
 func SendNotification(m *marker.Marker) {
 	lat, lng := m.Coords.Lat, m.Coords.Lng
+	zap.L().Info("Loaded AdminChatId: ", zap.Int64("chat_id", env.AdminChatId))
 	_, err := tgBot.Send(tgbotapi.NewLocation(env.AdminChatId, lng, lat))
 	if err != nil {
 		zap.L().Warn("failed to send message to admin: " + err.Error())
