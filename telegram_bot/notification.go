@@ -44,15 +44,17 @@ func SendNotification(m *marker.Marker) {
 	if err != nil {
 		zap.L().Warn("failed to marshal marker: " + err.Error())
 	}
-
-	var images = make([]interface{}, len(m.Images))
-	for i, image := range m.Images {
-		photo := tgbotapi.NewInputMediaPhoto(tgbotapi.FilePath(fmt.Sprintf("static/images/%s", image.Title)))
-		images[i] = photo
-	}
-	_, err = tgBot.SendMediaGroup(tgbotapi.NewMediaGroup(env.AdminChatId, []interface{}(images)))
-	if err != nil {
-		zap.L().Warn("failed to send message to admin: " + err.Error())
+	
+	if len(m.Images) > 0 {
+		var images = make([]interface{}, len(m.Images))
+		for i, image := range m.Images {
+			photo := tgbotapi.NewInputMediaPhoto(tgbotapi.FilePath(fmt.Sprintf("static/images/%s", image.Title)))
+			images[i] = photo
+		}
+		_, err = tgBot.SendMediaGroup(tgbotapi.NewMediaGroup(env.AdminChatId, []interface{}(images)))
+		if err != nil {
+			zap.L().Warn("failed to send message to admin: " + err.Error())
+		}
 	}
 
 	message := tgbotapi.NewMessage(env.AdminChatId, string(j))
