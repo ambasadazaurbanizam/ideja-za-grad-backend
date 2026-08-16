@@ -3,9 +3,9 @@ package telegram_bot
 import (
 	"encoding/json"
 	"fmt"
-	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
-	"github.com/yaroslav-asu/urban-map/internal/utils/env"
-	"github.com/yaroslav-asu/urban-map/models/gorm/marker"
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/internal/utils/env"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/models/gorm/marker"
 	"go.uber.org/zap"
 )
 

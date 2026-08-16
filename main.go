@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/yaroslav-asu/urban-map/api"
-	"github.com/yaroslav-asu/urban-map/internal"
-	"github.com/yaroslav-asu/urban-map/internal/utils/db"
-	"github.com/yaroslav-asu/urban-map/telegram_bot"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/api"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/internal"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/internal/utils/db"
+	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/telegram_bot"
 	"sync"
 )
 
