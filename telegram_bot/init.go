@@ -2,7 +2,7 @@ package telegram_bot
 
 import (
 	"encoding/json"
-	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/internal/utils/db"
 	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/internal/utils/env"
 	"go.uber.org/zap"
