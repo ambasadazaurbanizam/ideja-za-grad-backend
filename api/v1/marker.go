@@ -9,6 +9,7 @@ import (
 	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/pkg/app"
 	"github.com/ambasadazaurbanizam/ideja-za-grad-backend/telegram_bot"
 	"go.uber.org/zap"
+	"path/filepath"
 	"strconv"
 	"strings"
 )
@@ -79,14 +80,20 @@ func CreateMarker(c *gin.Context) {
 	m.Coords.Lat, _ = strconv.ParseFloat(form.Value["lat"][0], 64)
 	m.Coords.Lng, _ = strconv.ParseFloat(form.Value["lng"][0], 64)
 	files := form.File["images"]
+	if err = marker.EnsureImageStorage(); err != nil {
+		zap.L().Error("failed to create image directory: " + err.Error())
+		appG.Response(500, "failed to prepare image storage")
+		return
+	}
 	for _, file := range files {
 		uniqueId := uuid.New()
 		fileExt := strings.Split(file.Filename, ".")[1]
 		imageTitle := fmt.Sprintf("%s.%s", uniqueId, fileExt)
-		path := fmt.Sprintf("static/images/%s", imageTitle)
+		path := filepath.Join("static", "images", imageTitle)
 		err = c.SaveUploadedFile(file, path)
 		if err != nil {
 			zap.L().Error(err.Error())
+			continue
 		}
 		image := marker.Image{Title: imageTitle}
 		image.Save(db.GetDB())

@@ -10,6 +10,7 @@ import (
 
 func InitRouter() *gin.Engine {
 	r := gin.Default()
+	r.RemoveExtraSlash = true
 	r.Use(cors.New(cors.Config{
 		AllowOrigins: []string{"*"},
 		AllowMethods: []string{"GET", "POST"},
